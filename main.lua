@@ -9,6 +9,8 @@ function getPlayerNames() -- Get list of players for selection dropdown
     end
     return playerNames
 end
+local movehub = Window:NewTab("Movement")
+local movement = movehub:NewSection("Movement Tweaks")
 local rapetab = Window:NewTab("Rape")
 local rape = rapetab:NewSection("Rape The hoes")
 local dropdown = rape:NewDropdown("Rapist","", getPlayerNames(), function(x)
@@ -29,4 +31,18 @@ rape:NewButton("Fuck the bitch", "", function()
 end)
 rape:NewButton("RESET", "Reset your character to stop fucking her", function()
     player.Character.Humanoid.Health = 0
+end)
+movement:NewLabel("Speed")
+movement:NewSlider("Slider", "How fast you move", 100, 18, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 18
+end)
+movement:NewLabel("Jump height")
+movement:NewSlider("Slider", "How high you jump obviously", 350, 50, function(s)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+movement:NewButton("Default", "Set jump height to default", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 18
 end)
