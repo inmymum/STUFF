@@ -29,5 +29,8 @@ rape:NewButton("Fuck the bitch", "", function()
     fun(rapist, victim)
 end)
 rape:NewButton("RESET", "Reset your character to stop fucking her", function()
-    humanoid.Health = 0
+    local player = game.Players.LocalPlayer
+    if player.Character and player.Character:FindFirstChild("Humanoid") then
+        player.Character.Humanoid.Health = 0
+    end
 end)
