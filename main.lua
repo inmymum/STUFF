@@ -1,8 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
 local Window = Library.CreateLib("FuckerGUI", "DarkTheme")
+local player = game.Players.LocalPlayer
 
-local LocalP = game.Players.LocalPlayer
-local Mouse = LocalP:GetMouse()
 function getPlayerNames() -- Get list of players for selection dropdown
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
@@ -29,8 +28,5 @@ rape:NewButton("Fuck the bitch", "", function()
     fun(rapist, victim)
 end)
 rape:NewButton("RESET", "Reset your character to stop fucking her", function()
-    local player = game.Players.LocalPlayer
-    if player.Character and player.Character:FindFirstChild("Humanoid") then
-        player.Character.Humanoid.Health = 0
-    end
+    player.Character.Humanoid.Health = 0
 end)
