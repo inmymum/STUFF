@@ -1,5 +1,5 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/inmymum/RadioSilence/main/Lib/UI/main.lua"))()
-local Window = Library.CreateLib("RadioSilenceV1", "DarkTheme")
+local Window = Library.CreateLib("FuckerGUI", "DarkTheme")
 function getPlayerNames() -- Get list of players for selection dropdown
     local playerNames = {}
     for _, player in pairs(game.Players:GetPlayers()) do
