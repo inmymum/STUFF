@@ -29,7 +29,5 @@ rape:NewButton("Fuck the bitch", "", function()
     fun(rapist, victim)
 end)
 rape:NewButton("RESET", "Reset your character to stop fucking her", function()
-    Mouse.KeyDown:Connect(function()
-        LocalP.Character.Torso:Destroy()
-    end)
+    humanoid.Health = 0
 end)
